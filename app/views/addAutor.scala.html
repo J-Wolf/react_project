@@ -1,0 +1,21 @@
+@(autorForm: play.data.Form[Autor])
+
+@main("Autor"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Autor</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.AutorenController.create(), 'enctype -> "multipart/form-data"){
+            @helper.inputText(autorForm("Vorname"), 'id -> "name", '_label -> "Vorname", 'class -> "form-control")
+            @helper.inputText(autorForm("Nachname"), '_label -> "Nachname", 'class -> "form-control")
+            @helper.inputText(autorForm("geburtsDatum"), '_label -> "Geburtsdatum", 'class -> "form-control")
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Add </button>
+        }
+        </div>
+    </div>
+
+}

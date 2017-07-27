@@ -1,0 +1,34 @@
+
+a{
+    color: #ffffff;
+}
+
+a:hover{
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #175383;
+}
+.header{
+    height: 80px;
+    background-color: #175383;
+    color: #ffffff;
+    padding-left: 30px;
+}
+
+.navigation{
+    padding-left: 30px;
+    padding-top: 30px;
+    background-color: #2F77B1;
+    min-height: 89vh !important;
+}
+
+.navlink{
+    display: block;
+    text-align: center;
+    padding: 25px;
+}
+
+.nav-item{
+    text-align: center;
+    padding: 25px;
+}

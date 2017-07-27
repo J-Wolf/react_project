@@ -1,0 +1,28 @@
+@(buchForm: play.data.Form[Buch],autorenList: List[Autor])
+
+@main("Autor"){
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Bücher</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+        @helper.form(action = routes.BuecherController.create(), 'enctype -> "multipart/form-data"){
+            @helper.inputText(buchForm("titel"), 'id -> "name", '_label -> "Titel", 'class -> "form-control")
+            @helper.inputText(buchForm("untertitel"), '_label -> "Untertitel", 'class -> "form-control")
+            @helper.inputText(buchForm("isbn"), '_label -> "ISBN", 'class -> "form-control")
+            @helper.inputText(buchForm("seitenAnzahl"), '_label -> "Seitenzahl", 'class -> "form-control", 'type -> "number")
+            @helper.select(
+                field = buchForm("tmpAutor"),
+                options = (autorenList.map(autor => autor.getId().toString() -> autor.getNachname())),
+                'id -> "autor",
+                '_label -> "Autor",
+                'class -> "form-control")
+            <button type="submit" class="btn btn-success" value="Anlegen" ><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Add </button>
+        }
+        </div>
+    </div>
+
+}
